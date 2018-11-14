@@ -4,8 +4,13 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        api: path.join(__dirname, 'src/api/'),
+        assets: path.join(__dirname, 'src/assets/'),
         components: path.join(__dirname, 'src/components/'),
         router: path.join(__dirname, 'src/router/'),
+        src: path.join(__dirname, 'src/'),
+        store: path.join(__dirname, 'src/store/'),
+        utils: path.join(__dirname, 'src/utils/'),
       }
     }
   },

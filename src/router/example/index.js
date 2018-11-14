@@ -2,8 +2,12 @@ const pathaComponent = () => import('components/pages/example/patha')
 
 export default [
   {
+    redirectTo: { name: 'patha' },
+    path: '/example',
+  },
+  {
     component: pathaComponent,
-    name: 'examplePatha',
+    name: 'patha',
     path: '/example/patha',
   }
 ]
