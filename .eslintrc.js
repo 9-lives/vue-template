@@ -11,11 +11,25 @@ module.exports = {
   // global variables
   globals: {},
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: 2018,
     parser: 'babel-eslint',
     sourceType: 'module',
   },
   root: true,
   rules: {
+    'no-console': [
+      'error',
+      {
+        allow: [
+          'error',
+        ],
+      },
+    ],
+    'no-unused-vars': [
+      'error',
+      {
+        args: 'none',
+      },
+    ],
   }
 }
