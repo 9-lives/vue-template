@@ -1,19 +1,21 @@
 const path = require('path')
 
 module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        api: path.join(__dirname, 'src/api/'),
-        assets: path.join(__dirname, 'src/assets/'),
-        components: path.join(__dirname, 'src/components/'),
-        config: path.join(__dirname, 'config/'),
-        i18n: path.join(__dirname, 'src/locale'),
-        router: path.join(__dirname, 'src/router/'),
-        src: path.join(__dirname, 'src/'),
-        store: path.join(__dirname, 'src/store/'),
-        utils: path.join(__dirname, 'src/utils/'),
-      }
-    }
+  chainWebpack (config) {
+    config.resolve.alias
+      .set('api', resolve('src/api/'))
+      .set('assets', resolve('src/assets/'))
+      .set('components', resolve('src/components/'))
+      .set('config', resolve('config/'))
+      .set('i18n', resolve('src/locale'))
+      .set('plugins', resolve('src/plugins'))
+      .set('router', resolve('src/router/'))
+      .set('src', resolve('src/'))
+      .set('store', resolve('src/store/'))
+      .set('utils', resolve('src/utils/'))
   },
+}
+
+function resolve (dir) {
+  return path.join(__dirname, dir)
 }
