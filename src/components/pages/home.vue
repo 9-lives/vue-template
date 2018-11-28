@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p-example></p-example>
     <router-link :to="{ name: 'patha' }">redirect</router-link>
   </div>
 </template>
