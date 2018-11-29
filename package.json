@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "mockjs": "^1.0.1-beta3",
+    "normalize.css": "^8.0.1",
     "qs": "^6.6.0",
     "vue": "^2.5.17",
     "vue-i18n": "^8.3.2",
@@ -23,6 +24,9 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.9.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
     "vue-template-compiler": "^2.5.17"
   },
   "browserslist": [

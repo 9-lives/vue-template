@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  chainWebpack (config) {
+  chainWebpack(config) {
     config.resolve.alias
       .set('api', resolve('src/api/'))
       .set('assets', resolve('src/assets/'))
@@ -13,9 +13,27 @@ module.exports = {
       .set('src', resolve('src/'))
       .set('store', resolve('src/store/'))
       .set('utils', resolve('src/utils/'))
+
+    const oneOfsMap = config.module.rule('scss').oneOfs.store // map includes rule named as 'scss'
+
+    for (let item of oneOfsMap.values()) {
+      item
+        .use('sass-resources-loader')
+        .loader('sass-resources-loader')
+        .options({
+          resources: [
+            resolve('src/styles/global/var.scss'),
+            resolve('src/styles/global/color.scss'),
+            resolve('src/styles/global/funs.scss'),
+            resolve('src/styles/global/mixins.scss'),
+          ],
+          sourceMap: true,
+        })
+        .end()
+    }
   },
 }
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, dir)
 }
