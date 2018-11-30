@@ -12,6 +12,7 @@ module.exports = {
       .set('router', resolve('src/router/'))
       .set('src', resolve('src/'))
       .set('store', resolve('src/store/'))
+      .set('styles', resolve('src/styles/'))
       .set('utils', resolve('src/utils/'))
 
     const oneOfsMap = config.module.rule('scss').oneOfs.store // map includes rule named as 'scss'
