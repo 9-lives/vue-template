@@ -23,8 +23,8 @@ module.exports = {
         .loader('sass-resources-loader')
         .options({
           resources: [
-            resolve('src/styles/global/var.scss'),
             resolve('src/styles/global/color.scss'),
+            resolve('src/styles/global/var.scss'),
             resolve('src/styles/global/funs.scss'),
             resolve('src/styles/global/mixins.scss'),
           ],
