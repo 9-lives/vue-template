@@ -1,11 +1,13 @@
 import mockConf from 'api/mock/data'
-import axiosInstance from 'utils/network/ajax/axiosInstance'
+import {
+  axiosInstance,
+} from 'utils/network/ajax/axiosInstance'
 import AxiosMockAdapter from 'axios-mock-adapter'
 
 /**
  * 启动 API mock
  */
-export default function mock () {
+export default function mock() {
   const mockAdapter = new AxiosMockAdapter(axiosInstance)
 
   for (let [k, v] of mockConf) {

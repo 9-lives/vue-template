@@ -1,9 +1,16 @@
 import qs from 'qs'
 
-import axiosInstance from './axiosInstance'
-import { mock } from 'api/mock'
+import {
+  axiosInstance,
+} from './axiosInstance'
+import {
+  mock
+} from 'api/mock'
 
-async function post({
+/**
+ * ajax post 方法
+ */
+export async function post({
   auth,
   data,
   headers,
@@ -24,8 +31,3 @@ async function post({
     withCredentials,
   })
 }
-
-/**
- * ajax post 方法
- */
-export default post

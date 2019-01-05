@@ -1,18 +1,8 @@
-let ctx = require.context('./', true, /^\.\/(?!index)\S+.js$/)
-let arr = ctx.keys().map(i => {
-  let t = ctx(i).default
-  
-  if (typeof t === 'object' && t !== null) {
-    t = Object.entries(t)
+const ctx = require.context('./', true, /^\.\/(?!index)\S+.js$/)
+const obj = {}
 
-    if (t.length > 0) {
-      let [k, v] = t.shift()
+for (let i of ctx.keys()) {
+  Object.assign(obj, ctx(i).default)
+}
 
-      return [k, v]
-    }
-  }
-
-  return []
-})
-
-export default new Map(arr)
+export default new Map(Object.entries(obj))

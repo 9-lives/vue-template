@@ -1,7 +1,9 @@
 import {
   expect
 } from 'chai'
-import axiosInstance from 'utils/network/ajax/axiosInstance'
+import {
+  axiosInstance,
+} from 'utils/network/ajax/axiosInstance'
 
 describe('utils/network/ajax/axiosInstance test suite', () => {
   it('expect for a function', () => {

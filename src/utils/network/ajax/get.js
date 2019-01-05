@@ -1,7 +1,14 @@
-import axiosInstance from './axiosInstance'
-import { mock } from 'api/mock'
+import {
+  axiosInstance,
+} from './axiosInstance'
+import {
+  mock,
+} from 'api/mock'
 
-async function get({
+/**
+ * ajax get 方法
+ */
+export async function get({
   data,
   headers,
   url,
@@ -17,8 +24,3 @@ async function get({
     params: data,
   })
 }
-
-/**
- * ajax get 方法
- */
-export default get

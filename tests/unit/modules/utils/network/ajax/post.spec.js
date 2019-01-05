@@ -1,7 +1,9 @@
 import {
   expect
 } from 'chai'
-import post from 'utils/network/ajax/post'
+import {
+  post,
+} from 'utils/network/ajax/post'
 
 describe('utils/network/ajax/post test suite', () => {
   it('expect for a function', () => {

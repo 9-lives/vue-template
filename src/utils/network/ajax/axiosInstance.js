@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 // 配置文件
-import { projectConf } from 'config/project.conf'
+import {
+  projectConf,
+} from 'config/project.conf'
 
 const axiosInstance = axios.create({
   timeout: projectConf.ajaxTimeout,
@@ -17,4 +19,6 @@ axiosInstance.interceptors.response.use(rs => {
 /**
  * 全局 axios 实例
  */
-export default axiosInstance
+export {
+  axiosInstance
+}
