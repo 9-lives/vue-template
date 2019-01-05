@@ -5,20 +5,16 @@ import {
   deepFreeze
 } from 'utils/object/deepFreeze'
 
-describe('utils/deepFreeze test suite', () => {
-  it('expect to be frozen', () => {
-    expect(deepFreeze({})).to.be.frozen
+describe('utils/object/deepFreeze test suite', () => {
+  const o = deepFreeze({
+    a: 0,
+    b: {
+      ba: 0,
+      bb: {},
+    },
   })
 
   it('expect to be deep frozen', () => {
-    const o = deepFreeze({
-      a: 0,
-      b: {
-        ba: 0,
-        bb: {},
-      },
-    })
-
     recursiveExpect(o)
   })
 })
