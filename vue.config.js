@@ -22,7 +22,6 @@ function setAlias (conf) {
   .set('router', resolve('src/router/'))
   .set('src', resolve('src/'))
   .set('store', resolve('src/store/'))
-  .set('styles', resolve('src/styles/'))
   .set('ui', resolve('src/ui/'))
   .set('utils', resolve('src/utils/'))
 }
@@ -39,10 +38,10 @@ function setSassRsLoader (conf) {
       .loader('sass-resources-loader')
       .options({
         resources: [
-          resolve('src/styles/global/color.scss'),
-          resolve('src/styles/global/var.scss'),
-          resolve('src/styles/global/funs.scss'),
-          resolve('src/styles/global/mixins.scss'),
+          resolve('src/ui/styles/global/color.scss'),
+          resolve('src/ui/styles/global/var.scss'),
+          resolve('src/ui/styles/global/funs.scss'),
+          resolve('src/ui/styles/global/mixins.scss'),
         ],
         sourceMap: true,
       })
@@ -60,7 +59,7 @@ function setSvgSpritesLoader (conf) {
   .use('svg-sprite-loader')
   .loader('svg-sprite-loader')
   .options({
-    symbolId: 'icon-[name]',
+    symbolId: 'ic-[name]',
   })
 }
 

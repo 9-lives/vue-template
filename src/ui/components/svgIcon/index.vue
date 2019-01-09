@@ -14,7 +14,7 @@ export default {
   },
   data () {
     return {
-      icName: `#icon-${this.name}`
+      icName: `#ic-${this.name}`
     }
   }
 }

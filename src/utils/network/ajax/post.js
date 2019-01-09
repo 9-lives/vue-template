@@ -1,11 +1,11 @@
 import qs from 'qs'
 
 import {
-  axiosInstance,
-} from './axiosInstance'
+  request,
+} from './request'
 import {
   mock
-} from 'api/mock'
+} from './mock'
 
 /**
  * ajax post 方法
@@ -17,12 +17,9 @@ export async function post({
   url,
   withCredentials,
 }) {
-  await mock({
-    axios: axiosInstance,
-    url,
-  })
+  await mock()
 
-  return await axiosInstance({
+  return await request({
     auth,
     data: qs.stringify(data),
     headers,

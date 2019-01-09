@@ -4,13 +4,11 @@ import i18n from 'i18n'
 import mixins from 'src/mixins'
 import router from 'router'
 import store from 'store'
-import plugins from 'plugins'
 
-import app from 'components/pages/app.vue'
+import 'ui'
 
-for (let p of Object.values(plugins)) {
-  Vue.use(p)
-}
+import app from 'src/components/pages/app.vue'
+
 Vue.config.productionTip = false
 Vue.mixin(mixins)
 

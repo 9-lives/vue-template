@@ -1,4 +1,4 @@
-const pathaComponent = () => import('components/pages/example/patha')
+const pathaComponent = () => import('src/components/pages/example/patha')
 
 export default [
   {

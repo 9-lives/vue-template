@@ -1,10 +1,14 @@
-import { modMutation } from 'store/mutationsType'
+import {
+  modMutation
+} from 'store/mutationsType'
 
 /**
  * 模块 actions
  */
 export default {
-  action ({ commit }, payload) {
+  action({
+    commit,
+  }, payload) {
     commit(modMutation, payload)
   }
 }

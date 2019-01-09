@@ -1,27 +1,21 @@
-import mockConf from 'api/mock/data'
+import mockData from 'api/mock'
 import {
-  axiosInstance,
-} from 'utils/network/ajax/axiosInstance'
+  request,
+} from 'utils/network/ajax/request'
 import AxiosMockAdapter from 'axios-mock-adapter'
 
 /**
  * 启动 API mock
  */
 export default function mock() {
-  const mockAdapter = new AxiosMockAdapter(axiosInstance)
+  let mockAdapter = new AxiosMockAdapter(request)
 
-  for (let [k, v] of mockConf) {
-    const {
+  for (let [url, {
       data = {},
-        method = 'post',
-        status = '200'
-    } = v
-
-    if (method === 'get') {
-      mockAdapter.onGet(k).reply(status, data)
-    } else {
-      mockAdapter.onPost(k).reply(status, data)
-    }
+      method = 'post',
+      status = 200
+    } = {}] of mockData.entries()) {
+    mockAdapter[`on${method === 'get' ? 'Get' : 'Post'}`](url).reply(status, data)
   }
 
   // 测试正常情况
