@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
+    "commit": "npx git-cz",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -26,6 +27,8 @@
     "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.11.1",
     "eslint-plugin-vue": "^5.1.0",
     "mocha": "^5.2.0",
@@ -41,5 +44,14 @@
     "not ie < 10",
     "not ios < 9",
     "not dead"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": "> 5.2.0"
+  }
 }
