@@ -14,4 +14,9 @@ describe('utils/func/debounce', () => {
       callback: () => {}
     })).to.be.a('function')
   })
+  it('expect to execute callback function', done => {
+    debounce({
+      callback: done,
+    })()
+  })
 })

@@ -8,4 +8,9 @@ describe('utils/func/throttle', () => {
   it('expect to return a function', () => {
     expect(throttle({ callback: () => {} })).to.be.a('function')
   })
+  it('expect to execute callback function', done => {
+    throttle({
+      callback: done,
+    })()
+  })
 })

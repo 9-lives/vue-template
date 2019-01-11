@@ -10,13 +10,13 @@ describe('components/base/svgIcon.vue', () => {
   })
 
   it('renders <svg></svg>', () => {
-    expect(wrapper.is('svg')).to.be.true
+    expect(wrapper.is('svg')).to.equal(true)
     expect(wrapper.attributes('aria-hidden')).to.equal('true')
   })
   it('renders <use></use>', () => {
     const use = wrapper.find('use')
 
-    expect(use.is('use')).to.be.true
+    expect(use.is('use')).to.equal(true)
     expect(use.attributes('href')).to.equal('#ic-test')
   })
 })
