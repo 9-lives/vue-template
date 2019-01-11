@@ -3,27 +3,13 @@ import AxiosMockAdapter from 'axios-mock-adapter'
 import {
   request,
 } from 'utils/network/ajax/request'
-import {
-  set,
-} from 'utils/cookie/set'
 
 /**
  * 单元测试入口
  */
 (() => {
-  createCookie()
   mock()
 })()
-
-/**
- * 生成测试 cookie
- */
-function createCookie() {
-  set({
-    k: 'test',
-    v: 'test value',
-  })
-}
 
 /**
  * 启动 API mock
