@@ -15,7 +15,7 @@ const routes = importRoutes([
     component: homeComponent,
     name: 'home',
     path: '/home',
-  }
+  },
 ])
 
 /**

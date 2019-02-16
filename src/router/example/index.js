@@ -9,5 +9,5 @@ export default [
     component: pathaComponent,
     name: 'patha',
     path: '/example/patha',
-  }
+  },
 ]
